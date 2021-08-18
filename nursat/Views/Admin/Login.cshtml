@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+@model nursat.Models.LoginViewModel
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Вход в приложение</h2>
+        <form method="post" asp-controller="Admin" asp-action="Login"  asp-route-returnUrl="@Model.ReturnUrl">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-group">
+                <label  asp-for="Email"></label><br />
+                <input class="form-control" asp-for="Email" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Password"></label><br />
+                <input class="form-control" asp-for="Password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+            <div>
+                <input type="submit" value="Войти" class="btn btn-warning" />
+            </div>
+        </form>
+    </div>
+</div>

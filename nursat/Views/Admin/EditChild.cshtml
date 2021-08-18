@@ -1,0 +1,60 @@
+﻿@model nursat.Data.Child
+
+@{
+    ViewData["Title"] = "EditChild";
+}
+
+<h2>Оқушының деректерін өзгерту</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditChild">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="display:none">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChildName" class="control-label"></label>
+                <input asp-for="ChildName" class="form-control" />
+                <span asp-validation-for="ChildName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IIN" class="control-label"></label>
+                <input asp-for="IIN" class="form-control" />
+                <span asp-validation-for="IIN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pan" class="control-label"></label>
+                <input asp-for="Pan" class="form-control" />
+                <span asp-validation-for="Pan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parent" class="control-label"></label>
+                <input asp-for="Parent" class="form-control" />
+                <span asp-validation-for="Parent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сақтау" class="btn btn-warning" />
+            </div>
+        </form>
+    </div>
+</div>
+

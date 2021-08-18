@@ -1,0 +1,69 @@
+﻿@model IEnumerable<nursat.Data.Child>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<p style="margin-top:25px;">
+    <a asp-action="CreateChild" class="btn btn-success">Жаңа оқушы қосу</a>
+</p>
+<hr />
+
+<div class="text-center" style="margin-bottom:30px">
+    <h4>Іздеу</h4>
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+            <input class="form-control" id="myInput" type="text" placeholder="іздеу..">
+        </div>
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    
+</div>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChildName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IIN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Parent)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="myTable">
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChildName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Parent)
+                <strong style="font-size:14px">@Html.DisplayFor(modelItem => item.PhoneNumber)</strong>
+            </td>
+            <td>
+                <a class="btn btn-warning" href="/Admin/Detail/@item.Id">Бетке өту</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

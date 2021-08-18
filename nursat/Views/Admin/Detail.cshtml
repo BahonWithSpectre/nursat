@@ -1,0 +1,53 @@
+﻿@model nursat.Data.Child
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>Оқушы беті</h2>
+
+<div>
+
+    <hr />
+
+
+    <table class="table table-bordered">
+        <tr>
+            <td>Аты-жөні</td>
+            <td>@Html.DisplayNameFor(model => model.ChildName)</td>
+        </tr>
+        <tr>
+            <td>ИИН</td>
+            <td>@Html.DisplayFor(model => model.IIN)</td>
+        </tr>
+        <tr>
+            <td>Пән</td>
+            <td>@Html.DisplayFor(model => model.Pan)</td>
+        </tr>
+        <tr>
+            <td>Ата-анасы</td>
+            <td>@Html.DisplayFor(model => model.Parent)</td>
+        </tr>
+        <tr>
+            <td>Телефон номері</td>
+            <td>@Html.DisplayFor(model => model.PhoneNumber)</td>
+        </tr>
+        <tr>
+            <td>Оқуған уақыты</td>
+            <td>@Model.StartDate.ToString(format: "dd:MM:yyyy")</td>
+        <tr>
+            <td>Кеткен уақыты</td>
+            <td>@Model.EndDate.ToString()</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="/Admin/EditChild/@Model.Id" class="btn btn-warning">Өзгерту</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="/Admin/Delete/@Model.Id" class="btn btn-danger">Өшіру</a>
+            </td>
+        </tr>
+    </table>
+</div>
